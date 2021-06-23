@@ -1,8 +1,14 @@
 
 
-const CountryDetails = () => {
+const CountryDetails = ({country}) => {
+
+
     return(
-        <p>I am the CountryDetails</p>
+        <div>
+            <h2>{country.name}</h2>
+            <p>Population: {country.population}</p>
+            <img src={country.flag}></img>
+        </div>
     );
 };
 

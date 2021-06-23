@@ -31,7 +31,7 @@ const CountryContainer = () => {
                 <CountrySelector countries={countries} onCountrySelected={onCountrySelected}></CountrySelector>
             </div>
             <div>
-                <CountryDetails></CountryDetails>
+                { selectedCoutry ?<CountryDetails country={selectedCoutry}></CountryDetails> : null}   
             </div>
         </div>
     );
