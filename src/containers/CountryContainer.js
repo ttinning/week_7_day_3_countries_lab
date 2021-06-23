@@ -18,13 +18,17 @@ const CountryContainer = () => {
         const request = fetch('https://restcountries.eu/rest/v2/all').then(response => response.json()).then(countries => setCountries(countries));
     };
 
+    const onCountrySelected = function(country) {
+        setSelectedCountry(country);
+    };
+
 
 
     return (
-        <div class="main-container">
+        <div className="main-container">
             <div>
                 <h2>I am a CountryContainer</h2>
-                <CountrySelector></CountrySelector>
+                <CountrySelector countries={countries} onCountrySelected={onCountrySelected}></CountrySelector>
             </div>
             <div>
                 <CountryDetails></CountryDetails>
