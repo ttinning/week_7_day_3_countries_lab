@@ -22,12 +22,16 @@ const CountryContainer = () => {
         setSelectedCountry(country);
     };
 
+    const totalCountriesPop = countries.reduce((runningTotal, country) => {
+        return runningTotal + country.population;
+    }, 0);
+
 
 
     return (
         <div className="main-container">
             <div>
-                <h2>I am a CountryContainer</h2>
+                <h2>Total world population is {totalCountriesPop}</h2>
                 <CountrySelector countries={countries} onCountrySelected={onCountrySelected}></CountrySelector>
             </div>
             <div>

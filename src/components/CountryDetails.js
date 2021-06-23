@@ -1,4 +1,4 @@
-
+import './CountryDetails.css';
 
 const CountryDetails = ({country}) => {
 
@@ -7,7 +7,7 @@ const CountryDetails = ({country}) => {
         <div>
             <h2>{country.name}</h2>
             <p>Population: {country.population}</p>
-            <img src={country.flag}></img>
+            <img id="country-flag" src={country.flag}></img>
         </div>
     );
 };
