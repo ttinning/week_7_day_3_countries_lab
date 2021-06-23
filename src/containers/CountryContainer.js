@@ -5,6 +5,21 @@ import './CountryContainer.css';
 
 
 const CountryContainer = () => {
+
+
+    const [countries, setCountries] = useState([]);
+    const [selectedCoutry, setSelectedCountry] = useState(null);
+
+    useEffect(() => {
+        getCountries()
+    }, []);
+
+    const getCountries = function() {
+        const request = fetch('https://restcountries.eu/rest/v2/all').then(response => response.json()).then(countries => setCountries(countries));
+    };
+
+
+
     return (
         <div class="main-container">
             <div>
